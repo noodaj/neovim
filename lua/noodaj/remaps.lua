@@ -25,4 +25,8 @@ vim.keymap.set("n", "<C-a>", "ggVG")
 vim.keymap.set("v", "<C-c>", ":%y+<CR>")
 
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<C-s>", ":w<CR>")
+vim.keymap.set("n", "<C-s>", ":w!<CR>")
+vim.keymap.set("n", "<C-q>", ":q<CR>")
+
+vim.keymap.set("n", "<tab>", ":tabnext<CR>")
+vim.keymap.set("n", "<S-tab>", ":tabprevious<CR>")

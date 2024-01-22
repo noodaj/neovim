@@ -22,7 +22,8 @@ return require('packer').startup(function(use)
 		  }
 	  end
   })
-  vim.cmd('colorscheme poimandres')
+  use { 'rebelot/kanagawa.nvim'}
+  --vim.cmd('colorscheme poimandres')
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('tpope/vim-fugitive')
@@ -55,7 +56,6 @@ return require('packer').startup(function(use)
   use {'lewis6991/gitsigns.nvim', requires = {
     'nvim-lua/plenary.nvim'
   }, 
-  -- config = () require('gitsigns').setup() end
 }
 
 end)
