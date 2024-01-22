@@ -34,7 +34,7 @@ vim.keymap.set("n", "<S-tab>", ":tabprevious<CR>")
 vim.keymap.set("n", "<leader>wh", "<C-w>h")
 vim.keymap.set("n", "<leader>wj", "<C-w>j")
 vim.keymap.set("n", "<leader>wk", "<C-w>k")
-vim.keymap.set("n", "<leader>wj", "<C-w>l")
+vim.keymap.set("n", "<leader>wl", "<C-w>l")
 
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
 

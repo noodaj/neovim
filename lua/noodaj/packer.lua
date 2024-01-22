@@ -2,7 +2,7 @@
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
- 
+
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
@@ -11,20 +11,21 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
-  use ({ 
-	  'olivercederborg/poimandres.nvim',
-	  config = function()
-		  require('poimandres').setup {
-			  -- leave this setup function empty for default config
-			  -- or refer to the configuration section
-			  -- for configuration options
-		  }
-	  end
+  use ({
+    'olivercederborg/poimandres.nvim',
+    config = function()
+      require('poimandres').setup {
+        -- leave this setup function empty for default config
+        -- or refer to the configuration section
+        -- for configuration options
+      }
+    end
   })
   use { 'rebelot/kanagawa.nvim'}
   --vim.cmd('colorscheme poimandres')
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+
   use('nvim-treesitter/playground')
   use('tpope/vim-fugitive')
   use {
@@ -46,16 +47,25 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'}
   }
 }
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional
-    },
-  }
-
-  use {'lewis6991/gitsigns.nvim', requires = {
-    'nvim-lua/plenary.nvim'
-  }, 
+use {
+  'nvim-tree/nvim-tree.lua',
+  requires = {
+    'nvim-tree/nvim-web-devicons', -- optional
+  },
 }
-
+use {'lewis6991/gitsigns.nvim', requires = {
+    'nvim-lua/plenary.nvim'
+  },
+}
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
+use 'm4xshen/autoclose.nvim'
+use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+}
 end)
