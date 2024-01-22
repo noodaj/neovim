@@ -1,6 +1,6 @@
 function Color(color)
-  color = color or "poimandres"
-  --color = color or "kanagawa-wave"
+  --color = color or "poimandres"
+  color = color or "kanagawa-wave"
 
   require('kanagawa').setup({
     compile = false,
