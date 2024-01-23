@@ -1,6 +1,6 @@
 function Color(color)
   --color = color or "poimandres"
-  color = color or "kanagawa-wave"
+  color = color or "kanagawa"
 
   require('kanagawa').setup({
     compile = false,
@@ -15,7 +15,8 @@ function Color(color)
     terminalColors = true,
     theme = "wave",
   })
-	vim.cmd.colorscheme(color)
+	--vim.cmd.colorscheme(color)
+  vim.cmd('colorscheme poimandres')
 end
 
 Color()
