@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
   }
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
-  use ({
+  --[[ use ({
     'olivercederborg/poimandres.nvim',
     config = function()
       require('poimandres').setup {
@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
         -- for configuration options
       }
     end
-  })
+  }) ]]
   use { 'rebelot/kanagawa.nvim'}
   --vim.cmd('colorscheme poimandres')
 

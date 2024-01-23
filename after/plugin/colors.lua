@@ -13,8 +13,7 @@ function Color(color)
     transparent = false,
     dimInactive = false,
     terminalColors = true,
-    
-    theme = "wave", 
+    theme = "wave",
   })
 	vim.cmd.colorscheme(color)
 end

@@ -13,8 +13,9 @@ local function on_attach(bufnr)
   end
 
   api.config.mappings.default_on_attach(bufnr)
-  
---  vim.keymap.set("n", "
+  --[[ vim.keymap.set("n", "<tab>", api.node.open.tab())
+  vim.keymap.set("n", "<CR>", api.node.open.tab())
+  vim.keymap.set("n", "o", api.node.open.tab()) ]]
 end
 
 local list = {
@@ -51,10 +52,7 @@ require("nvim-tree").setup{
   },
   view = {
     width = 25,
-    mappings = {
-      list = list
-    },
-  }, 
+  },
   renderer = {
     group_empty = true,
   },
