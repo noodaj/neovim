@@ -63,9 +63,7 @@ use {
 }
 use 'm4xshen/autoclose.nvim'
 use {
-    'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup()
-    end
-}
+    'numToStr/Comment.nvim'}
+
+use 'HiPhish/rainbow-delimiters.nvim'
 end)
