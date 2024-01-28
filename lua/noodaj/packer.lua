@@ -31,19 +31,15 @@ return require("packer").startup(function(use)
 				{ "rafamadriz/friendly-snippets" },
 			},
 		},
-		{
-			"nvim-tree/nvim-tree.lua",
-			requires = { "nvim-tree/nvim-web-devicons" },
-		},
-		{
-			"nvim-lualine/lualine.nvim",
-			requires = { "nvim-tree/nvim-web-devicons", opt = true },
-		},
+		{ "nvim-tree/nvim-tree.lua" },
+		{ "nvim-tree/nvim-web-devicons" },
+		{ "nvim-lualine/lualine.nvim" },
 		{ "m4xshen/autoclose.nvim" },
 		{ "numToStr/Comment.nvim" },
 		{ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } },
 		{ "HiPhish/rainbow-delimiters.nvim" },
 		{ "mhartington/formatter.nvim" },
+		{ "romgrk/barbar.nvim" },
 	})
 
 	--[[ use ({

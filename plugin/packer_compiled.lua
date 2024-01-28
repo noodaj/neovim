@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/jadon/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
     url = "https://github.com/m4xshen/autoclose.nvim"
   },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/Users/jadon/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/jadon/.local/share/nvim/site/pack/packer/start/cmp-buffer",
