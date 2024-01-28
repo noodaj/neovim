@@ -4,12 +4,12 @@ require("Comment").setup({
 	ignore = nil,
 	---LHS of toggle mappings in NORMAL mode
 	toggler = {
-		line = "<C-/>",
-		block = "<C-/>",
+		line = "gcc",
+		block = "gbc",
 	},
 	---LHS of operator-pending mappings in NORMAL and VISUAL mode
 	opleader = {
-		line = "<C-/>",
-		block = "<C-/>",
+		line = "gc",
+		block = "gb",
 	},
 })

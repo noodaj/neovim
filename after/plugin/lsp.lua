@@ -70,7 +70,7 @@ lspconfig.tsserver.setup({
 			disableSuggestions = true,
 		},
 	},
-	command = {
+	commands = {
 		OrganizeImports = {
 			organize_imports,
 			description = "Organize Imports",
