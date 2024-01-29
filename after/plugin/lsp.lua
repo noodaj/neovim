@@ -95,10 +95,19 @@ require("mason-tool-installer").setup({
 
 -- CMP
 local cmp = require("cmp")
+local luasnip = require("luasnip")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
-	sources = {
+	experimental = {
+		ghost_text = true,
+	},
+	snippet = {
+		expand = function(args)
+			luasnip.lsp_expand(args.body)
+		end,
+	},
+	sources = cmp.config.sources({
 		{
 			name = "nvim_lsp",
 			entry_filter = function(entry, ctx)
@@ -114,7 +123,7 @@ cmp.setup({
 				return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= "Text"
 			end,
 		},
-	},
+	}, { name = "buffer" }),
 	formatting = lsp_zero.cmp_format(),
 	mapping = cmp.mapping.preset.insert({
 		["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
@@ -124,4 +133,11 @@ cmp.setup({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 	}),
+})
+
+cmp.setup.cmdline({ "/", "?" }, {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = "buffer" },
+	},
 })

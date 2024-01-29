@@ -20,7 +20,7 @@ require("barbar").setup({
 	current = { buffer_index = true },
 })
 
-opts = { noremap = true, silent = true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<A-,>", ":BufferPrevious<CR>", opts)
 vim.keymap.set("n", "<A-.>", ":BufferNext<CR>", opts)
 vim.keymap.set("n", "<C-q>", ":BufferClose<CR>", opts)

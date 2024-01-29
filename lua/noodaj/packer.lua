@@ -40,17 +40,17 @@ return require("packer").startup(function(use)
 		{ "HiPhish/rainbow-delimiters.nvim" },
 		{ "mhartington/formatter.nvim" },
 		{ "romgrk/barbar.nvim" },
+		{
+			"olivercederborg/poimandres.nvim",
+			config = function()
+				require("poimandres").setup({
+					-- leave this setup function empty for default config
+					-- or refer to the configuration section
+					-- for configuration options
+				})
+			end,
+		},
 	})
 
-	--[[ use ({
-    'olivercederborg/poimandres.nvim',
-    config = function()
-      require('poimandres').setup {
-        -- leave this setup function empty for default config
-        -- or refer to the configuration section
-        -- for configuration options
-      }
-    end
-  }) ]]
 	--vim.cmd('colorscheme poimandres')
 end)
