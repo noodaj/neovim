@@ -1,5 +1,6 @@
 local lsp_zero = require("lsp-zero")
 
+--LSP ZERO
 lsp_zero.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
@@ -35,25 +36,9 @@ lsp_zero.on_attach(function(client, bufnr)
 	end, opts)
 end)
 
-lsp_zero.set_sign_icons({
-	error = "✘",
-	warn = "▲",
-	hint = "⚑",
-	info = "»",
-})
+lsp_zero.set_sign_icons({ error = " ", warn = " ", hint = "󰠠 ", info = " " })
 
-require("mason").setup({})
-require("mason-lspconfig").setup({
-	ensure_installed = { "tsserver", "pylsp" },
-	handlers = {
-		lsp_zero.default_setup,
-		lua_ls = function()
-			local lua_opts = lsp_zero.nvim_lua_ls()
-			require("lspconfig").lua_ls.setup(lua_opts)
-		end,
-	},
-})
-
+-- LSP CONFIG
 local lspconfig = require("lspconfig")
 
 local function organize_imports()
@@ -78,6 +63,37 @@ lspconfig.tsserver.setup({
 	},
 })
 
+-- MASON
+require("mason").setup({
+	ui = {
+		icons = {
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
+		},
+	},
+})
+
+require("mason-lspconfig").setup({
+	ensure_installed = { "tsserver", "pylsp", "lua_ls", "html", "cssls", "tailwindcss" },
+	handlers = {
+		lsp_zero.default_setup,
+		lua_ls = function()
+			local lua_opts = lsp_zero.nvim_lua_ls()
+			require("lspconfig").lua_ls.setup(lua_opts)
+		end,
+	},
+})
+
+require("mason-tool-installer").setup({
+	ensure_installed = {
+		"prettier",
+		"stylua",
+		"black",
+	},
+})
+
+-- CMP
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
@@ -105,5 +121,7 @@ cmp.setup({
 		["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
 		["<tab>"] = cmp.mapping.confirm({ select = true }),
 		["<C-Space>"] = cmp.mapping.complete(),
+		["<C-b>"] = cmp.mapping.scroll_docs(-4),
+		["<C-f>"] = cmp.mapping.scroll_docs(4),
 	}),
 })
