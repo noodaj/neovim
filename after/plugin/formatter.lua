@@ -51,7 +51,7 @@ require("formatter").setup({
 			require("formatter.filetypes.javascriptreact").prettier,
 		},
 		python = {
-			require("formatter.filetypes.python").pyink,
+			require("formatter.filetypes.python").black,
 		},
 		java = {
 			require("formatter.filetypes.java").clangformat,
