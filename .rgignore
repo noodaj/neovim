@@ -1,0 +1,9 @@
+!*
+.git/
+node_modules/
+.aws-sam/
+*-lock.*
+**/build/static/
+**/build/assets/
+**/mochawesome-report*/
+**/.DS_Store

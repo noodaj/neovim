@@ -50,6 +50,7 @@ return require("packer").startup(function(use)
 				})
 			end,
 		},
+		{ "akinsho/toggleterm.nvim", version = "*" },
 	})
 
 	--vim.cmd('colorscheme poimandres')
