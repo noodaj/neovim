@@ -40,6 +40,7 @@ lsp_zero.set_sign_icons({ error = " ", warn = " ", hint = "󰠠 ", info = 
 
 -- LSP CONFIG
 local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local function organize_imports()
 	local params = {
@@ -50,19 +51,35 @@ local function organize_imports()
 end
 
 lspconfig.tsserver.setup({
-	init_options = {
-		preferences = {
-			disableSuggestions = true,
-		},
-	},
+	capabilities = capabilities,
 	commands = {
 		OrganizeImports = {
 			organize_imports,
 			description = "Organize Imports",
 		},
 	},
+	settings = {
+		completions = {
+			completeFunctionCalls = true,
+		},
+	},
 })
 
+lspconfig.pylsp.setup({
+	settings = {
+		pylsp = {
+			plugins = {
+				pylint = { enabled = false },
+				-- pyflakes = { enabled = false },
+				pycodestyle = { enabled = false },
+			},
+		},
+		completions = {
+			completeFunctionCalls = true,
+		},
+	},
+	capabilities = capabilities,
+})
 -- MASON
 require("mason").setup({
 	ui = {
@@ -135,7 +152,7 @@ cmp.setup({
 	}),
 })
 
-cmp.setup.cmdline({ "/", "?" }, {
+cmp.setup.cmdline({ "/", "?", ":" }, {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
 		{ name = "buffer" },
