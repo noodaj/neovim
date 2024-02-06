@@ -52,6 +52,7 @@ return require("packer").startup(function(use)
 		},
 		{ "akinsho/toggleterm.nvim", version = "*" },
 		{ "stevearc/dressing.nvim" },
+		{ "sudormrfbin/cheatsheet.nvim" },
 	})
 
 	--vim.cmd('colorscheme poimandres')

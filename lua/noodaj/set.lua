@@ -19,3 +19,4 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
 vim.g.mapleader = " "
+vim.opt.clipboard = "unnamedplus"

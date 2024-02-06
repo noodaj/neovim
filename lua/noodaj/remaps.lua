@@ -46,3 +46,4 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- center after jumping files
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
+vim.keymap.set("n", "<A-h>", ":Cheatsheet<CR>")
