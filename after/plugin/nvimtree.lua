@@ -19,12 +19,23 @@ require("nvim-tree").setup({
 	filters = {
 		dotfiles = true,
 	},
-	update_cwd = true,
 	update_focused_file = {
 		enable = true,
 		debounce_delay = 15,
-		update_root = true,
-		ignore_list = {},
+	},
+	actions = {
+		use_system_clipboard = true,
+		change_dir = {
+			enable = false,
+			global = true,
+			restrict_above_cwd = true,
+		},
+	},
+	tab = {
+		sync = {
+			open = true,
+			close = true,
+		},
 	},
 })
 

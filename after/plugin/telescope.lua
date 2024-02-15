@@ -6,6 +6,7 @@ vim.keymap.set("n", "<leader>gf", builtin.git_files, {})
 vim.keymap.set("n", "<leader>fs", function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
+vim.keymap.set("n", "<leader>tr", ":Telescope resume<CR>")
 
 local vimgrep_arguments = { unpack(config.values.vimgrep_arguments) }
 

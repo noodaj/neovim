@@ -37,7 +37,6 @@ return require("packer").startup(function(use)
 		{ "m4xshen/autoclose.nvim" },
 		{ "numToStr/Comment.nvim" },
 		{ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } },
-		{ "HiPhish/rainbow-delimiters.nvim" },
 		{ "mhartington/formatter.nvim" },
 		{ "romgrk/barbar.nvim" },
 		{
@@ -53,6 +52,7 @@ return require("packer").startup(function(use)
 		{ "akinsho/toggleterm.nvim", version = "*" },
 		{ "stevearc/dressing.nvim" },
 		{ "sudormrfbin/cheatsheet.nvim" },
+		{ "kylechui/nvim-surround" },
 	})
 
 	--vim.cmd('colorscheme poimandres')

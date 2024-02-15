@@ -184,6 +184,11 @@ _G.packer_plugins = {
     path = "/home/nodaj/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-surround"] = {
+    loaded = true,
+    path = "/home/nodaj/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/nodaj/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -220,11 +225,6 @@ _G.packer_plugins = {
     path = "/home/nodaj/.local/share/nvim/site/pack/packer/start/poimandres.nvim",
     url = "https://github.com/olivercederborg/poimandres.nvim"
   },
-  ["rainbow-delimiters.nvim"] = {
-    loaded = true,
-    path = "/home/nodaj/.local/share/nvim/site/pack/packer/start/rainbow-delimiters.nvim",
-    url = "https://github.com/HiPhish/rainbow-delimiters.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/nodaj/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -234,6 +234,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nodaj/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/home/nodaj/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   ["vim-fugitive"] = {
     loaded = true,
