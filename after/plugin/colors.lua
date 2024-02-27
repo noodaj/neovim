@@ -15,8 +15,14 @@ function Color(color)
 		terminalColors = true,
 		theme = "wave",
 	})
-	--vim.cmd.colorscheme(color)
-	vim.cmd("colorscheme poimandres")
+	require("poimandres").setup({
+		bold_vert_split = false,
+	})
+	require("onedark").setup({ style = "darker" })
+
+	vim.cmd.colorscheme("onedark")
+	-- vim.cmd.colorscheme("poimandres")
+	-- vim.cmd("colorscheme kanagawa")
 end
 
 Color()

@@ -4,9 +4,8 @@ local lsp_zero = require("lsp-zero")
 lsp_zero.on_attach(function(client, bufnr)
 	local opts = { buffer = bufnr, noremap = false }
 
-	vim.keymap.set("n", "<leader>gd", ":Telescope lsp_definition<CR>", opts)
+	vim.keymap.set("n", "<leader>gd", ":Telescope lsp_definitions<CR>", opts)
 	vim.keymap.set("n", "<leader>gr", ":Telescope lsp_references<CR>", opts)
-	vim.keymap.set("n", "<leader>vws", ":Telescope lsp_workspace_symbols<CR>", opts)
 	vim.keymap.set("n", "<leader>vd", function()
 		vim.diagnostic.open_float()
 	end, opts)

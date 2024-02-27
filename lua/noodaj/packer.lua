@@ -5,10 +5,12 @@ vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
 	use({
+		{ "olivercederborg/poimandres.nvim" },
+		{ "rebelot/kanagawa.nvim" },
+		{ "navarasu/onedark.nvim" },
 		{ "wbthomason/packer.nvim" },
 		{ "nvim-telescope/telescope.nvim", tag = "0.1.5", requires = { { "nvim-lua/plenary.nvim" } } },
 		{ "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } },
-		{ "rebelot/kanagawa.nvim" },
 		{ "nvim-treesitter/playground" },
 		{ "tpope/vim-fugitive" },
 		{
@@ -39,20 +41,33 @@ return require("packer").startup(function(use)
 		{ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } },
 		{ "mhartington/formatter.nvim" },
 		{ "romgrk/barbar.nvim" },
-		{
-			"olivercederborg/poimandres.nvim",
-			config = function()
-				require("poimandres").setup({
-					-- leave this setup function empty for default config
-					-- or refer to the configuration section
-					-- for configuration options
-				})
-			end,
-		},
 		{ "akinsho/toggleterm.nvim", version = "*" },
 		{ "stevearc/dressing.nvim" },
 		{ "sudormrfbin/cheatsheet.nvim" },
 		{ "kylechui/nvim-surround" },
+		{
+			"lukas-reineke/indent-blankline.nvim",
+			-- config = function()
+			-- 	local opts = {
+			-- 		indent = { highlight = "IblIndent", char = "▏", priority = 1, smart_indent_cap = true },
+			-- 		whitespace = {
+			-- 			highlight = { "Whitespace", "NonText", "LineNr", "IblIndent", "IblWhitespace", "IblScope" },
+			-- 			remove_blankline_trail = false,
+			-- 		},
+			-- 		scope = {
+			-- 			show_exact_scope = false,
+			-- 			highlight = "IblIndent",
+			-- 			show_start = false,
+			-- 			show_end = false,
+			-- 			-- char = "→",
+			-- 		},
+			-- 	}
+			-- 	require("ibl").setup(require("indent-rainbowline").make_opts())
+			-- end,
+			-- requires = {
+			-- 	"TheGLander/indent-rainbowline.nvim",
+			-- },
+		},
 	})
 
 	--vim.cmd('colorscheme poimandres')

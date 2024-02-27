@@ -1,12 +1,13 @@
 require("gitsigns").setup({
 	signs = {
-		add = { text = "+" },
-		change = { text = "~" },
+		add = { text = "│" },
+		change = { text = "│" },
 		delete = { text = "_" },
 		topdelete = { text = "‾" },
 		changedelete = { text = "~" },
 		untracked = { text = "┆" },
 	},
+
 	signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
 	numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
 	linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
@@ -37,7 +38,6 @@ require("gitsigns").setup({
 	yadm = {
 		enable = false,
 	},
-
 	on_attach = function(bufnr)
 		local gs = package.loaded.gitsigns
 
@@ -69,6 +69,7 @@ require("gitsigns").setup({
 		end, { expr = true })
 		map("n", "<leader>hs", gs.stage_hunk)
 		map("n", "<leader>hr", gs.reset_hunk)
+		map("n", "<leader>hu", gs.undo_stage_hunk)
 		map("n", "<leader>hS", gs.stage_buffer)
 		map("n", "<leader>hR", gs.reset_buffer)
 		map("n", "<leader>hp", gs.preview_hunk)

@@ -1,2 +1,27 @@
-##
-test    | :something
+##LSP
+LSP Definitions | <leader>gd
+LSP References | <leader>gr
+Diagnostics | <leader>vd
+
+##Fugitive
+Stage file | s
+Unstage file | u
+Unstage everything | U
+Add inline diff | >
+Remove inline diff | <
+
+##Code actions
+Code actions list | <leader>ca
+
+##Comments
+Line comment | gc
+Block comment | gb
+
+##Surround
+Surround words |  ysiw{char}
+Make Strings | ys$"
+Delete around | ds{char}
+Remove tags GOATED | dst
+Change tags | cst{tag}<CR>
+Change quotes | cs'" | cs"'
+Delete functions | dsf
